@@ -224,11 +224,9 @@ const About = () => {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-24">
         {[
           { val: "Since 2017", label: "creating music without borders" },
-          { val: "2 continents", label: "offices in the USA and Dubai (UAE)" },
-          { val: "10+", label: "official videos released with our artists" },
           { val: "1 world-class studio", label: "FIVE MUSIC Studio, FIVE Palm Jumeirah, Dubai" }
         ].map((stat, i) => (
           <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left gap-4 bg-white p-8 rounded-2xl border border-foreground/10 shadow-xl hover:-translate-y-2 transition-transform duration-300">
