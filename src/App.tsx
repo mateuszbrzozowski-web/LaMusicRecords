@@ -588,8 +588,9 @@ const ContactForm = () => {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
     setResult("Sending...");
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     formData.append("access_key", "207a8fb9-6eba-4558-94ca-0f38c72bf5c0");
 
     try {
@@ -598,9 +599,9 @@ const ContactForm = () => {
         body: formData
       });
       const data = await response.json();
-      setResult(data.success ? "Message sent successfully!" : "Error sending message.");
+      setResult(data.success ? "Message sent successfully!" : data.message || "Error sending message.");
       if (data.success) {
-        event.currentTarget.reset();
+        form.reset();
         setTimeout(() => setResult(""), 5000);
       }
     } catch (error) {
