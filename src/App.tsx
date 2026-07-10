@@ -368,10 +368,10 @@ const ArtistsSection = () => {
       bio: 'Singer and performer. Her singles “Toxic”, “Crazy Pride” and “Into Another World” define the label’s pop-electronic sound; her remix collaboration with Burak Yeter took her music to an international audience.',
       image: 'https://cdn.shopify.com/s/files/1/1041/0383/8028/files/WhatsApp_Image_2026-07-09_at_01.35.28.jpg?v=1783674360',
       tracks: [
-        { title: 'Another World (Remix)', artist: 'Nicole Obarzanek, Burak Yeter', time: '03:14' },
-        { title: 'Into Another World', artist: 'Nicole Obarzanek', time: '03:20' },
-        { title: 'Crazy Pride', artist: 'Nicole Obarzanek', time: '02:09' },
         { title: 'Toxic', artist: 'Nicole Obarzanek', time: '03:00' },
+        { title: 'Crazy Pride', artist: 'Nicole Obarzanek', time: '02:09' },
+        { title: 'Into Another World', artist: 'Nicole Obarzanek', time: '03:20' },
+        { title: 'Another World (Remix)', artist: 'Nicole Obarzanek, Burak Yeter', time: '03:14' },
       ]
     },
     {
