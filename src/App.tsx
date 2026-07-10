@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   ArrowRight, 
@@ -40,10 +40,7 @@ const Navbar = () => {
   
   return (
     <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b-2 border-foreground">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <img src="https://cdn.shopify.com/s/files/1/1041/0383/8028/files/nowelogo.png?v=1783676549" alt="LA Music Records" className="h-16 md:h-20 w-auto scale-110 md:scale-125 origin-left" />
-        </div>
+      <div className="max-w-7xl mx-auto px-6 h-14 flex justify-center items-center relative">
         <div className="hidden md:flex gap-8 font-sans text-sm font-bold uppercase tracking-widest">
           <a href="#about" className="hover:text-primary transition-colors">About us</a>
           <a href="#artists" className="hover:text-primary transition-colors">Artists</a>
@@ -52,10 +49,10 @@ const Navbar = () => {
           <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
           <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
         </div>
-        <div className="hidden md:block">
-          <a href="#contact"><Button primary>Work With Us</Button></a>
+        <div className="hidden md:flex absolute right-6">
+          <a href="#contact"><Button primary className="py-2 text-sm">Work With Us</Button></a>
         </div>
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden absolute right-6" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
@@ -78,8 +75,14 @@ const Navbar = () => {
 
 // Hero
 const Hero = () => (
-  <section className="pt-16 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center relative overflow-hidden min-h-[80vh]">
-    <div className="md:w-1/2 z-10">
+  <>
+    <section className="relative w-full">
+      <img src="https://cdn.shopify.com/s/files/1/1041/0383/8028/files/zdjecie-strona-1.jpg?v=1783640812" alt="La Music Records" className="w-full h-auto object-contain" />
+      <div className="absolute inset-0 bg-background/20 z-0"></div>
+    </section>
+    
+    <section className="pt-12 pb-24 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10 w-full bg-background">
+      <div className="md:w-1/2 z-10">
       <h1 className="text-6xl md:text-8xl leading-[0.9] tracking-tighter">
         <span className="font-sans font-bold block">Sound</span>
         <span className="font-serif italic font-normal text-4xl md:text-6xl block ml-12 mt-2">That Crosses</span>
@@ -120,6 +123,7 @@ const Hero = () => (
       <Mic className="absolute top-20 right-10 w-10 h-10 text-foreground transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110" />
     </div>
   </section>
+  </>
 );
 
 // About
@@ -446,7 +450,7 @@ const ArtistsSection = () => {
         {/* Main Content Area */}
         <div className="flex-grow relative rounded-3xl border border-foreground/10 shadow-xl overflow-hidden flex flex-col md:flex-row bg-white">
           {/* Image side */}
-          <div className="w-full md:w-5/12 relative bg-zinc-900 border-b md:border-b-0 md:border-r-4 border-foreground overflow-hidden">
+          <div className="w-full md:w-5/12 h-80 md:h-auto relative bg-zinc-900 border-b md:border-b-0 md:border-r-4 border-foreground overflow-hidden">
             <img 
               src={artist.image} 
               alt={artist.name} 
