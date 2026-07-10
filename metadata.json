@@ -1,0 +1,6 @@
+{
+  "name": "Vinyl Wave",
+  "description": "A modern, high-contrast landing page for a vinyl record subscription service.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
