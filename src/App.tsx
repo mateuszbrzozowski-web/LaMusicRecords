@@ -366,10 +366,10 @@ const ArtistsSection = () => {
       bio: 'Singer and performer. Her singles “Toxic”, “Crazy Pride” and “Into Another World” define the label’s pop-electronic sound; her remix collaboration with Burak Yeter took her music to an international audience.',
       image: 'https://cdn.shopify.com/s/files/1/1041/0383/8028/files/WhatsApp_Image_2026-07-09_at_01.35.28.jpg?v=1783674360',
       tracks: [
-        { title: 'Toxic', artist: 'Nicole Obarzanek', time: '03:00' },
-        { title: 'Crazy Pride', artist: 'Nicole Obarzanek', time: '02:09' },
-        { title: 'Into Another World', artist: 'Nicole Obarzanek', time: '03:20' },
-        { title: 'Another World (Remix)', artist: 'Nicole Obarzanek, Burak Yeter', time: '03:14' },
+        { title: 'Toxic', artist: 'Nicole Obarzanek', time: '03:00', url: 'https://open.spotify.com/track/5Gp5YKBhZLExjMDZqQlqB1?si=fd7012ca224a456d' },
+        { title: 'Crazy Pride', artist: 'Nicole Obarzanek', time: '02:09', url: 'https://open.spotify.com/track/3hHlfm83UFLCoBLHJkIqbb?si=32a89d468bbd450b' },
+        { title: 'Into Another World', artist: 'Nicole Obarzanek', time: '03:20', url: 'https://open.spotify.com/track/6yVumzlXlrbbrz0VHScEV0?si=f76a8a5b123f4060' },
+        { title: 'Another World (Remix)', artist: 'Nicole Obarzanek, Burak Yeter', time: '03:14', url: 'https://open.spotify.com/track/4iLxwLKlQkybMlOeYveFQb?si=e2e4143b6347448f' },
       ]
     },
     {
@@ -379,7 +379,7 @@ const ArtistsSection = () => {
       bio: 'Rapper with an uncompromising style. His collaboration with Pappa Bear on “Running Yo Mouth” bridges Polish rap and the international scene.',
       image: 'https://cdn.shopify.com/s/files/1/1041/0383/8028/files/Jongman.jpg?v=1783640811',
       tracks: [
-        { title: 'Running Yo Mouth', artist: 'Jongmen x Pappa Bear', time: '03:45' }
+        { title: 'Running Yo Mouth', artist: 'Jongmen x Pappa Bear', time: '03:45', url: 'https://open.spotify.com/track/163Xif6xbA2ghY6IZGOf6l?si=ae2292739e51435e' }
       ]
     },
     {
@@ -389,7 +389,7 @@ const ArtistsSection = () => {
       bio: 'International hip-hop and rap legend. Known for the high-energy collaboration “Running Yo Mouth” bridging borders and styles.',
       image: 'https://cdn.shopify.com/s/files/1/1041/0383/8028/files/Pappabear.png?v=1783640812',
       tracks: [
-        { title: 'Running Yo Mouth', artist: 'Jongmen x Pappa Bear', time: '03:45' }
+        { title: 'Running Yo Mouth', artist: 'Jongmen x Pappa Bear', time: '03:45', url: 'https://open.spotify.com/track/163Xif6xbA2ghY6IZGOf6l?si=ae2292739e51435e' }
       ]
     },
     {
@@ -399,9 +399,9 @@ const ArtistsSection = () => {
       bio: 'DJ and producer with years of club-scene experience. Author of dancefloor releases “Follow You”, “Summer” and “Don’t Let Me Down”.',
       image: 'https://cdn.shopify.com/s/files/1/1041/0383/8028/files/RobertM.jpg?v=1783640811',
       tracks: [
-        { title: 'Follow You', artist: 'Robert M', time: '03:30' },
-        { title: 'Summer', artist: 'Robert M feat. Ada & AR', time: '03:15' },
-        { title: 'Don\'t Let Me Down', artist: 'Robert M ft. Dave\'Ron & Ada', time: '03:25' },
+        { title: 'Follow You', artist: 'Robert M', time: '03:30', url: 'https://open.spotify.com/track/75IuexmE1RUG4ef1YtMX9j?si=b8983430b43043ae' },
+        { title: 'Summer', artist: 'Robert M feat. Ada & AR', time: '03:15', url: 'https://open.spotify.com/track/1TgnjXzEnj450fNO7qMph8?si=25abab198ab44df3' },
+        { title: 'Don\'t Let Me Down', artist: 'Robert M ft. Dave\'Ron & Ada', time: '03:25', url: 'https://open.spotify.com/track/6s1YQTJ1mqbMTzIaoR5MHK?si=c36e11f774c848b3' },
       ]
     }
   ];
@@ -479,14 +479,14 @@ const ArtistsSection = () => {
               </h3>
               <div className="flex flex-col gap-3">
                 {artist.tracks.map((track, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-foreground/10 bg-white shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl">
+                  <a key={i} href={track.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl border border-foreground/10 bg-white shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl cursor-pointer">
                     <span className="text-primary font-bold text-lg font-mono w-6 text-center">{i + 1}</span>
                     <div className="flex-grow">
-                      <p className="text-base font-bold leading-tight">{track.title}</p>
+                      <p className="text-base font-bold leading-tight group-hover:text-primary transition-colors">{track.title}</p>
                       <p className="text-xs font-medium text-foreground/60 uppercase tracking-wider mt-1">{track.artist}</p>
                     </div>
                     <span className="text-sm font-bold font-mono text-foreground/40">{track.time}</span>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
