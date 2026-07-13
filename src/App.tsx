@@ -40,8 +40,11 @@ const Navbar = () => {
   
   return (
     <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b-2 border-foreground">
-      <div className="max-w-7xl mx-auto px-6 h-14 flex justify-center items-center relative">
-        <div className="hidden md:flex gap-8 font-sans text-sm font-bold uppercase tracking-widest">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between relative">
+        <div className="flex items-center w-auto md:w-1/4 z-10">
+          <img src="https://cdn.shopify.com/s/files/1/1041/0383/8028/files/nowelogo.png?v=1783676549" alt="LA Music Records" className="h-10 md:h-12 w-auto origin-left" />
+        </div>
+        <div className="hidden md:flex flex-1 justify-center gap-6 lg:gap-8 font-sans text-sm font-bold uppercase tracking-widest">
           <a href="#about" className="hover:text-primary transition-colors">About us</a>
           <a href="#artists" className="hover:text-primary transition-colors">Artists</a>
           <a href="#videos" className="hover:text-primary transition-colors">Videos</a>
@@ -49,10 +52,10 @@ const Navbar = () => {
           <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
           <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
         </div>
-        <div className="hidden md:flex absolute right-6">
+        <div className="hidden md:flex w-1/4 justify-end z-10">
           <a href="#contact"><Button primary className="py-2 text-sm">Work With Us</Button></a>
         </div>
-        <button className="md:hidden absolute right-6" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden z-10 ml-auto" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
